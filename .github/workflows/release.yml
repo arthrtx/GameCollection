@@ -53,4 +53,3 @@ jobs:
         with:
           tag_name: ${{ env.TAG }}
           files: GameCollection-*.apk
-          body_path: docs/release-notes.md

@@ -2,18 +2,11 @@
 
 App Android para guardar e organizar a tua coleção de videojogos.
 
-<p>
-  <img src="docs/lista.webp" width="200">
-  <img src="docs/novo-jogo.webp" width="200">
-  <img src="docs/favoritos.webp" width="200">
-  <img src="docs/modo-escuro.webp" width="200">
-</p>
-
 ## Descarregar
 
-👉 **[Descarregar o APK mais recente](../../releases/latest)**
+O APK está na secção **Releases** deste repositório.
 
-1. Abre o link acima no telemóvel e descarrega o ficheiro `.apk`.
+1. Descarrega o ficheiro `.apk` no telemóvel.
 2. Abre o ficheiro para instalar.
 3. Se o Android pedir, permite instalar apps de "fontes desconhecidas".
 
