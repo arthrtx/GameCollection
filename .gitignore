@@ -1,0 +1,20 @@
+# Ficheiros gerados pelo Android Studio / Gradle
+.gradle/
+.kotlin/
+build/
+app/build/
+.idea/
+*.iml
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# APKs e logs (o APK fica nas Releases)
+*.apk
+*.aab
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db

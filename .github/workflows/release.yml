@@ -1,0 +1,46 @@
+# Compila a app e publica o APK numa Release sempre que é criada uma tag v*
+name: Publicar APK
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - uses: android-actions/setup-android@v3
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "9.8.0"
+
+      - name: Compilar APK
+        run: gradle assembleDebug --no-daemon
+
+      - name: Renomear APK
+        run: cp app/build/outputs/apk/debug/app-debug.apk GameCollection-${GITHUB_REF_NAME}.apk
+
+      - name: Guardar APK no workflow
+        uses: actions/upload-artifact@v4
+        with:
+          name: GameCollection-apk
+          path: GameCollection-*.apk
+
+      - name: Publicar na Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: GameCollection-*.apk
+          body_path: docs/release-notes.md
