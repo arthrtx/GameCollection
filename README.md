@@ -44,7 +44,3 @@ app/src/main/java/com/example/colecaojogos/
 1. Instala o [Android Studio](https://developer.android.com/studio).
 2. Clona o repositório ou descarrega o ZIP (botão verde **Code**).
 3. Abre a pasta no Android Studio e carrega em **Run ▶**.
-
-## Licença
-
-[MIT](LICENSE) — podes usar e modificar livremente.
